@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blogmates-frontend
+  labels:
+    app: blogmates-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blogmates-frontend
+  template:
+    metadata:
+      labels:
+        app: blogmates-frontend
+    spec:
+      containers:
+      - name: blogmates-frontend
+        image: vladstanciu/blogmates-frontend:0.0.4
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 4173

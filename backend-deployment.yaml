@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blogmates-backend
+  labels:
+    app: blogmates-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: blogmates-backend
+  template:
+    metadata:
+      labels:
+        app: blogmates-backend
+    spec:
+      containers:
+      - name: blogmates-backend
+        image: vladstanciu/blogmates-backend:0.0.8
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DB_NAME
+          value: blogmates
+        - name: DB_USER
+          value: bloguser
+        - name: DB_PASSWORD
+          value: blogpassword
+        - name: DB_HOST
+          value: postgres
+        - name: DB_PORT
+          value: "5432"
