@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: blogmates-backend
-        image: vladstanciu/blogmates-backend:0.0.8
+        image: vladstanciu/blogmates-backend:0.1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
