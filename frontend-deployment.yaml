@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: blogmates-frontend
-        image: vladstanciu/blogmates-frontend:0.1.0
+        image: vladstanciu/blogmates-frontend:0.1.2
         imagePullPolicy: Always
         ports:
         - containerPort: 4173
