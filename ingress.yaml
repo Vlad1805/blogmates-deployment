@@ -8,8 +8,13 @@ metadata:
     nginx.ingress.kubernetes.io/client-body-buffer-size: "50m"
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - blogmates-app.com
+    secretName: blogmates-tls-secret
   rules:
-  - http:
+  - host: blogmates-app.com
+    http:
       paths:
       - path: /api/
         pathType: Prefix
